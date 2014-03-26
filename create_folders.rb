@@ -6,6 +6,9 @@
 # typ eattached to it, called an array. The array is filled with the names of
 # all the students in the class
 STUDENTS = [
+  'Rachel Ober',
+  'Max Miller',
+  'Brooks Swinnerton',
   'Alex Cheng',
   'Max Dana',
   'Jared Djuhar',
