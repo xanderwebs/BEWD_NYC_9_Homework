@@ -1,0 +1,7 @@
+Hey, this is my initial blogpost!
+
+In the first class I learned some basic command line commands to manipulate and move around my directories and files, and learned about Git and Github. 
+
+For the purpose of this homework I cloned the repo again (on my desktop at home), added a new file with touch (this file), edited it, and then staged it for a commit with git add. After that I committed it with a message to the Github repo, and submitted a pull request. Fun stuff :) 
+
+Jim
