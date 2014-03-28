@@ -12,5 +12,6 @@ LINUX how to keep working in the terminal when launching SUBLIME?
 
 How to Not have old tabs open everytime I open sublime?
 
+How to set sublime enter is two spaces not tab
 
 NOTES:
