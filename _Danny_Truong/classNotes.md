@@ -9,6 +9,7 @@ RUNNING QUESTIONS:
 How to set up so “Master” indicator shows up in terminal?
 
 LINUX how to keep working in the terminal when launching SUBLIME?
+	ANSWER: add "&" after file name
 
 How to Not have old tabs open everytime I open sublime?
 
