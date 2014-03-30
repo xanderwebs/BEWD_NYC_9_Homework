@@ -6,7 +6,8 @@ puts "Hi " + name
 
 puts "I am going to think of a secret integer between 1 and 10. I am going to give you 3 guesses to get it right."
 
-def take_guess(answer, chances)
+def has_chance(answer, chances)
+	#method makes sure user has more than 0 chances and then will accept a guess if has them
 	if chances == 0
 		puts "You are out of chances and you lost.  Thank you for playing!"
 		return
@@ -17,9 +18,10 @@ def take_guess(answer, chances)
 end
 
 def sanitize_guess(answer, chances)
-	puts "What is your guess?" + "The answer is #{answer}"
-	guess = gets.to_i
-	if guess < 1 || guess > 10 #|| !guess.is_a? Integer
+	#method makes sure guess is a proper input and then will check it
+	puts "What is your guess?"
+	guess = gets.to_i #rounding down integers because could not figure out is not integer statement
+	if guess < 1 || guess > 10 
 		puts "You guess has to be greater than or equal to one, less than or equal than ten, and an Integer"
 		sanitize_guess(answer, chances)
 	else 
@@ -28,6 +30,7 @@ def sanitize_guess(answer, chances)
 end
 
 def check_guess(guess, answer, chances)
+	#checks the answer of the user and will
 	if guess == answer
 		puts "You are correct!  Great job!"
 	elsif guess < answer
@@ -40,6 +43,6 @@ def check_guess(guess, answer, chances)
 end
 
 
-take_guess((1..10).to_a.sample, 3)	
+has_chance((1..10).to_a.sample, 3)	
 
 
