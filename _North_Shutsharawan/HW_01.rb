@@ -1,3 +1,22 @@
+def welcome
+	puts "Welcome to North's Secret Number game!"
+end
+
+welcome
+puts "What is your name?"
+name = gets.chomp 
+
+puts "Hello " + name + ". Good to meet you!"
+puts "The rules for North's Secret Number game is simple. 
+You have three chances to guess the correct number between 1 and 10."
+puts "What's your first guess between 1-10?"
+
+# If you called rand(1..10), it would generate a number from 1 - 10 inluding 10. 
+# If you called rand)1...10), it would generate a number from 1 - 10 not including 10.
+puts rand(1..10)
+
+
+
 ###############################################################################
 #
 # Back-End Web Development - Homework #1
