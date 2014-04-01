@@ -36,3 +36,40 @@
 #
 ###############################################################################
 
+def get_secret_num
+	return 7
+end
+
+def compare_guess_answer(answer)
+	guess = gets
+	return answer <=> guess.to_i
+end
+
+def do_trial
+    level = compare_guess_answer(get_secret_num)
+	if(level == 0)
+		puts "You win!"
+		return true;
+	elsif level > 0
+		puts "Too Low"
+		return false
+	elsif level < 0
+		puts "Too High"
+		return false
+	end
+end
+
+puts "Welcome. I am Nic Tse. Give me your name."
+user_name = gets
+puts "Hi #{user_name}" 
+puts "You have 3 tries to guess a number between 1 and 10"
+
+if(!do_trial)
+	puts "2 tries left"
+	if(!do_trial)
+		puts "1 guess left"
+		if(!do_trial)
+			puts "What a loser. The answer is " + get_secret_num.to_s + ", loser."
+		end
+	end
+end
