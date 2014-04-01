@@ -1,10 +1,9 @@
 puts "Welcome to the game, this was created by Andy Timmons"
 puts "What is your name? "
-name = gets
+name = gets.strip
 
-puts "Hi " + name
+puts "Hi #{name}.  I am going to think of a secret integer between 1 and 10."
 
-puts "I am going to think of a secret integer between 1 and 10. I am going to give you 3 guesses to get it right."
 
 def has_chance(answer, chances)
 	#method makes sure user has more than 0 chances and then will accept a guess if has them
@@ -35,14 +34,16 @@ def check_guess(guess, answer, chances)
 		puts "You are correct!  Great job!"
 	elsif guess < answer
 		puts "You guessed too low!"
-		take_guess(answer, chances-1)
+		chances = chances-1
+		has_chance(answer, chances)
 	elsif guess > answer
 		puts "You guessed too high!"
-		take_guess(answer, chances-1)
+		chances = chances-1
+		has_chance(answer, chances)
 	end		
 end
 
-
-has_chance((1..10).to_a.sample, 3)	
+random_num = (1..10).to_a.sample
+has_chance(random_num, 3)	
 
 
