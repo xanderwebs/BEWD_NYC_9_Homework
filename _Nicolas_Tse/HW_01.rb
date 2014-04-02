@@ -48,7 +48,6 @@ end
 def do_trial
     level = compare_guess_answer(get_secret_num)
 	if(level == 0)
-		puts "You win!"
 		return true;
 	elsif level > 0
 		puts "Too Low"
@@ -59,17 +58,23 @@ def do_trial
 	end
 end
 
-puts "Welcome. I am Nic Tse. Give me your name."
-user_name = gets
-puts "Hi #{user_name}" 
-puts "You have 3 tries to guess a number between 1 and 10"
-
-if(!do_trial)
-	puts "2 tries left"
-	if(!do_trial)
-		puts "1 guess left"
-		if(!do_trial)
-			puts "What a loser. The answer is " + get_secret_num.to_s + ", loser."
+def run_game(trials)
+	while trials > 0
+		puts "You have #{trials} trials"
+		if(do_trial)
+			return true;
 		end
+		trials -= 1;
 	end
+	return false;
+end
+
+puts "Welcome. I am Nic Tse. Give me your name."
+user_name = gets.chomp
+puts "Hi #{user_name}, guess a number between 1 and 10"
+
+if(run_game(3))
+	puts "You win, I guess."
+else
+	puts "HAHA Loser, the number is #{get_secret_num}, loser."
 end
