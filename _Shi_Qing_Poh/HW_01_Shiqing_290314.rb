@@ -55,7 +55,7 @@ def player_name
   else
   	puts "Okay! Good Luck with the game!"
   end
-  return name_chomped
+  name_chomped
 end
 
 # Function for providing instructions with the number range and number of guesses.
@@ -102,8 +102,8 @@ def correct_guess(i,guess,secret_number,name)
   end
   puts "Today is your lucky day. Congrats!"
   puts "Want to try something harder? \nType 'Yes' or 'No'."
-  hardergame = gets.chomp
-  return hardergame
+  hardergame = gets.chomp.capitalize
+  hardergame
 end
 
 # Subroutine for the wrong guess and provide user with some help. It also aborts out of the game if player used up all his/her chances.
@@ -150,6 +150,7 @@ def bad_guess(i,guess,secret_number,name,bad_counter,tries)
   	when left == 0
   		puts "Game Over #{name}. The number is #{secret_number}. You lost."
   		abort("Thank you for playing!")
+      #break
   	else
   		puts "I am ignoring your input. You have #{left} tries left."
   	end
@@ -163,7 +164,7 @@ welcome_message
 name = player_name
 instructions(10,3)
 puts "Got it? Type 'Yes' or 'No'"
-gotit = gets.chomp
+gotit = gets.chomp.capitalize
 if gotit == 'Yes'
 	hardergame = 'Yes'
 	j=1
@@ -184,6 +185,7 @@ if gotit == 'Yes'
 		when j == 6
 			puts "Sorry there's nothing harder. You have won! You must be a wizard! \nBut I lied, there's no surprise! Din see that coming, did you?"
 			abort("Thank you for playing!")
+
 		end
 
 		
