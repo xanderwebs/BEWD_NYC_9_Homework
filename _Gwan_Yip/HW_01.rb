@@ -42,7 +42,7 @@ $styling = "****************************************************"
 
 # Method for the greeting and capturing user's name
 
-def greeting()
+def greeting
 
 	# Creating the greeting variable
 	greeting = "#$styling\nWelcome to the Secret Number Game. Made by Gwan Yip\n#$styling"
@@ -58,13 +58,13 @@ def greeting()
 	
 	# Printing the greeting witht the user's name
 	puts
-	puts "#$styling\nHi #{user_name}\n\nYou have 3 guesses to correctly identify the Secret\nNumber.Every time you guess incorrectly you'll get a\nhint to help you figure out the correct number.\nBut remember you only have 3 guesses.\n\nGood luck!!\n#$styling"
+	puts "#$styling\nHi #{user_name}\n\nYou have 3 guesses to correctly identify the Secret\nNumber between 1 and 10. Every time you guess incorrectly you'll get a\nhint to help you figure out the correct number.\nBut remember you only have 3 guesses.\n\nGood luck!!\n#$styling"
 
 end
 
 # Methodd for the game engine
 
-def guess()
+def guess
 
 	# Hard coding the correct number and setting the number of attempts per game
 	correct_number = 7
@@ -104,7 +104,7 @@ def guess()
 		# A conditional to check if a user has any more guesses left
 		if attempts != 0
 			
-			puts "#$styling\nYou have #{attempts} many guesses, enter a another number"
+			puts "#$styling\nYou have #{attempts} more guesses, enter a another number"
 			
 			# This is the message printed when a user has no more guesses left
 			else
