@@ -19,6 +19,7 @@ counter = 0
 #loop for determining number of guesses and conditional for what to do next
 
 guesses = 3
+
 while counter < guesses
 
 	if player_num == game_num
@@ -30,6 +31,7 @@ while counter < guesses
 	elsif player_num > game_num
 
 		puts "Your number was a bit too high"
+
 		counter += 1
 
 		if counter == 3
@@ -42,6 +44,7 @@ while counter < guesses
 	elsif player_num < game_num
 
 		puts "Your number was a bit too low"
+
 		counter += 1
 		
 		if counter == 3
