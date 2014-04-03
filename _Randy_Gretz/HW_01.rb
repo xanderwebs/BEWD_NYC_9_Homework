@@ -101,6 +101,7 @@ if game == 1
 			puts "\nBINGO! Third time's the charm"
 			puts "\n<<<<<<<<<<< WINNER >>>>>>>>>>>"
 		end
+# I'm not going to tell them the answer, it's fixed rather than randomly generated so telling them would ruin it!		
 end	
 
 
