@@ -14,12 +14,12 @@ puts "What is your guess?"
 
 player_num = gets.strip.to_i
 
-counter = 1
+counter = 0
 
 #loop for determining number of guesses and conditional for what to do next
 
 guesses = 3
-while counter <= guesses
+while counter < guesses
 
 	if player_num == game_num
 
@@ -29,7 +29,7 @@ while counter <= guesses
 
 	elsif player_num > game_num
 
-		puts "Your number was a bit too high, try again"
+		puts "Your number was a bit too high"
 		counter += 1
 
 		if counter == 3
@@ -41,7 +41,7 @@ while counter <= guesses
 
 	elsif player_num < game_num
 
-		puts "Your number was a bit too low, try again"
+		puts "Your number was a bit too low"
 		counter += 1
 		
 		if counter == 3
