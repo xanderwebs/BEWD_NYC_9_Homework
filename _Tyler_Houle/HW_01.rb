@@ -59,7 +59,7 @@ def rules
 end
 
 #### Here is the secret number. It will be randomly generated each game between 1 and 10.
-secret_number = 5
+secret_number = rand(10)
 
 #### Takes care of appropriate pluralization
 def guess_count(count)
