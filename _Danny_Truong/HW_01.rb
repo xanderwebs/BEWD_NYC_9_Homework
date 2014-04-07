@@ -36,3 +36,45 @@
 #
 ###############################################################################
 
+#hard coded secret number.  TO DO: set to random
+secret_number = 3
+#Welcome and ask for player name, capitalizes name
+puts "\nWelcome to SECRET NUMBER!\nDan Truong's first RUBY game.\n\nLet's get started shall we?\nWhat should I call you?"
+player_name = gets.chomp.capitalize
+#greetings
+puts "\nHi #{player_name}! Nice to meet you.\n\nSo here's how this game works.\nI'm thinking of a number between 1 and 10.\nI'm going to give you 3 chances to guess the SECRET NUMBER.\nEasy peasy. Let's begin!"
+
+def guessing (answer)
+#Initial number of guesses set at 3
+	guesses_left = 3
+	
+	while (guesses_left > 0) do
+#as long as guesses_left not 0, prompt for input. Convert input to number.
+		puts "Guess!"
+
+		guess = gets.chomp.to_i
+
+#if the guess is not a number, converts to 0 and returns 'not a number error'
+			if (0 < guess and guess < answer)
+					guesses_left -= 1
+					puts "That's a little low."
+				elsif (guess > answer)
+					guesses_left -= 1
+					puts "That's a little high."
+				elsif (guess == answer)
+					guesses_left = 0
+					puts "You got it!  Great job!"
+				else 
+					guesses_left -= 1
+					puts "Come on, man.  The game is called secret NUMBER."
+			end
+
+			puts "You have #{guesses_left} guesses left."
+	end
+
+	puts "Game over!  The secret number was #{answer}\n"	
+	
+end
+
+
+guessing (secret_number)
