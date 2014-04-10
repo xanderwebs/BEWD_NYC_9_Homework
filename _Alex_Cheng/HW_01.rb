@@ -18,7 +18,7 @@
 #	Intros
 #	  -	Welcome the player to your game. Let them know who created the game.
 #	  -	Ask for the player's name then personally greet them by printing to the screen, "Hi player_name!"
-#	  -	Any good game will communicate the rules. Let the player know they must guess a number between 1 and 10 
+#	  -	Any good game will communicate the rules. Let the player know they must guess a number between 1 and 10
 #		and that they only have 3 tries to do so.
 #
 #	Functionality:
@@ -36,7 +36,8 @@
 #
 ###############################################################################
 
-THE_ANSWER = rand(10) + 1
+THE_ANSWER = rand(1..10)
+ATTEMPTS = 3
 
 def welcome_messages
   puts "Welcome to Alex's secret number game"
@@ -57,12 +58,17 @@ end
 
 def get_number
   print "Enter a number: "
-  gets.strip.to_i
+  num = begin
+    Integer(gets.strip)
+  rescue
+    puts "What are you, stupid? That's not a number."
+    get_number
+  end
+  num
 end
 
 def lets_play_a_game
   welcome_messages
-  attempt get_number, 2
+  attempt get_number, ATTEMPTS - 1
 end
 lets_play_a_game
-
