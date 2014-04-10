@@ -58,13 +58,12 @@ end
 
 def get_number
   print "Enter a number: "
-  num = begin
+  begin
     Integer(gets.strip)
   rescue
     puts "What are you, stupid? That's not a number."
     get_number
   end
-  num
 end
 
 def lets_play_a_game
