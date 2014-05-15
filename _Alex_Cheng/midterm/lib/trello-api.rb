@@ -1,7 +1,9 @@
 require 'trello'
 
 class TrelloViewer
-	attr_reader :next, :level
+	attr_reader :next
+	LEVEL_ENUM = [:board, :list, :card]
+
 
 	def initialize auth
 		Trello.configure do |config|
@@ -11,18 +13,15 @@ class TrelloViewer
 		@history = []
 		@history << Trello::Board.find(auth['board'])
 		@next = self.peek.lists
-		@level = :board
 	end
 
 	def add_card id
 		@history << Trello::Card.find(id)
-		@level = :card
 		@next = nil
 	end
 
 	def add_list id
 		@history << Trello::List.find(id)
-		@level = :list
 		@next = self.peek.cards
 	end
 
@@ -33,6 +32,10 @@ class TrelloViewer
 	def get_choice
 		show_options @next
 		select_option @next.length-1
+	end
+
+	def get_level
+		LEVEL_ENUM[(@history.length-1) % LEVEL_ENUM.length]
 	end
 
 	def peek
