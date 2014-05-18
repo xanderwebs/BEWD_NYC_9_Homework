@@ -4,11 +4,11 @@ require 'yaml'
 AUTH_KEYS = YAML.load_file('lib/auth_keys.yml')
 
 def welcome
-	puts 'Welcome to your Trello CLI browser. I\'ll be your host.'
+  puts 'Welcome to your Trello CLI browser. I\'ll be your host.'
 end
 
 def main
-	t = TrelloViewer.new AUTH_KEYS
+  t = TrelloViewer.new AUTH_KEYS
   while true
     puts "You chose the #{t.peek.name} #{t.get_level}"
     break unless t.has_next?
